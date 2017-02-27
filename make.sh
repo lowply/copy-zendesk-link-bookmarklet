@@ -23,4 +23,4 @@ cat main.js \
 	| gsed -e "s/%3A/:/g" \
 	> main.bookmarklet
 
-gsed -i "s/\[Copy ZD link\]\(.*\)/\[Copy ZD link\]\($(cat main.bookmarklet)\)/g" README.md
+gsed -i "s/\[Copy ZD link\]\(.*\)/\[Copy ZD link\]\($(cat main.bookmarklet)\)/g" index.md
