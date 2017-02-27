@@ -4,7 +4,7 @@ Copies a markdown link to the Zendesk ticket you're currently viewing in the for
 
 ## Usage
 
-1. Visit [lowply.com/copy-zendesk-link-bookmarklet](http://lowply.com/copy-zendesk-link-bookmarklet/)
+1. Visit [lowply.github.io/copy-zendesk-link-bookmarklet](https://lowply.github.io/copy-zendesk-link-bookmarklet/)
 1. Drag the link to your bookmark bar
 1. Click bookmarklet on a page to get the link on your clipboard
 
@@ -22,4 +22,4 @@ It works for me. It may not work in your browser of choice, and may break at any
 
 ## Inspired by
 
-@benbalter's [Copy issue link bookmarklet](https://github.com/benbalter/copy-issue-link-bookmarklet)
+@benbalter 's [Copy issue link bookmarklet](https://github.com/benbalter/copy-issue-link-bookmarklet)
