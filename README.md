@@ -10,6 +10,8 @@ Copies a markdown link to the Zendesk ticket you're currently viewing in the for
 
 ## Developing locally
 
+Currently `make.sh` only supports macOS with `gsed` and `nkf` installed.
+
 1. Clone down the repo and `cd` into the directory
 1. Make your changes to `main.js`
 1. Run `make.sh`
