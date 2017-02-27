@@ -2,8 +2,9 @@ javascript:(
 	function(){
 		url = window.location.href;
 		if (url.indexOf("zendesk.com") != -1) {
-			sub = document.getElementById("ember3466").value.trim();
-			tid = document.getElementById("ember3416").innerHTML.slice(-6, -1);
+			ch = document.getElementById("tabs").getElementsByClassName("selected")[0].getElementsByClassName("tab-content-holder")[0];
+			sub = ch.getElementsByClassName("title")[0].innerHTML;
+			tid = ch.getElementsByClassName("subtitle")[0].innerHTML.trim().replace(/^#/g, "");
 			textArea = document.createElement("textarea");
 			textArea.value = "[ZD#" + tid + "-" + sub + "](" + url + ")";
 			document.body.appendChild(textArea);
