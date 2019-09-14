@@ -1,22 +1,25 @@
-javascript:(
-	function(){
-		url = window.location.href;
-		if (url.indexOf("zendesk.com") != -1) {
-			selected = document.getElementById("tabs").getElementsByClassName("selected");
-			if (selected.length != 0){
-				ch = selected[0].getElementsByClassName("tab-content-holder")[0];
-				sub = ch.getElementsByClassName("title")[0].innerHTML;
-				tid = ch.getElementsByClassName("subtitle")[0].innerHTML.trim().replace(/^#/g, "");
-				textArea = document.createElement("textarea");
-				textArea.value = "[ZD#" + tid + "-" + sub + "](" + url + ")";
-				document.body.appendChild(textArea);
-				textArea.select();
-				document.execCommand("copy");
-				console.log("Markdown link " + textArea.value + " has been copied to your clipboard!");
-				textArea.remove();
-			}
-		}else{
-			console.log("This bookmarklet only works on domain under zendesk.com.");
-		}
-	}
-)();
+'use strict';
+
+const fs = require('fs');
+const encodeUrl = require('encodeurl')
+const Terser = require("terser");
+const stripIndent = require('strip-indent');
+
+function main() {
+    const code = fs.readFileSync("copy-zendesk-link-bookmarklet.js", {encoding: "utf-8"});
+    const out = "javascript:(function(){" + encodeUrl(Terser.minify(code).code) + "})();"
+    const md = `
+        # Copy Zendesk link bookmarklet
+
+        Drag this link to your bookmark bar to save the bookmarklet:
+
+        [Copy ZD link](${out})
+
+        See [github.com/lowply/copy-zendesk-link-bookmarklet](https://github.com/lowply/copy-zendesk-link-bookmarklet) for more information.
+    `
+
+    fs.writeFileSync("index.md", stripIndent(md), "utf8");
+    fs.writeFileSync("copy-zendesk-link-bookmarklet.bookmarklet", out , "utf8");
+}
+
+main()

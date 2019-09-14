@@ -1,0 +1,29 @@
+{
+  "name": "copy-zendesk-link-markdown",
+  "version": "0.0.2",
+  "description": "Copy Zendesk link in a makrdown format",
+  "main": "main.js",
+  "dependencies": {
+    "strip-indent": "^3.0.0",
+    "encodeurl": "^1.0.2",
+    "terser": "^4.3.1"
+  },
+  "scripts": {
+    "compile": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lowply/copy-zendesk-link-bookmarklet.git"
+  },
+  "keywords": [
+    "zendesk",
+    "markdown",
+    "bookmarklet"
+  ],
+  "author": "Sho Mizutani (@lowply)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lowply/copy-zendesk-link-bookmarklet/issues"
+  },
+  "homepage": "https://github.com/lowply/copy-zendesk-link-bookmarklet#readme"
+}

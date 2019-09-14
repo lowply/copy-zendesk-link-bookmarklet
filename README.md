@@ -10,11 +10,11 @@ Copies a markdown link to the Zendesk ticket you're currently viewing in the for
 
 ## Developing locally
 
-Currently `make.sh` only supports macOS with `gsed` and `nkf` installed.
+Requires Node.js to build the bookmarklet.
 
-1. Clone down the repo and `cd` into the directory
-1. Make your changes to `main.js`
-1. Run `make.sh`
+1. Clone the repo and `cd` into the directory
+1. Make changes to `copy-zendesk-link-markdown.js`
+1. Run `npm install && npm run compile`
 
 ## Development status
 
