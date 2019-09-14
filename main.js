@@ -6,8 +6,8 @@ const Terser = require("terser");
 const stripIndent = require('strip-indent');
 
 function main() {
-    const code = fs.readFileSync("copy-zendesk-link-markdown.js", {encoding: "utf-8"});
-    const out = "javascript(function(){" + encodeUrl(Terser.minify(code).code) + "})();"
+    const code = fs.readFileSync("copy-zendesk-link-bookmarklet.js", {encoding: "utf-8"});
+    const out = "javascript:(function(){" + encodeUrl(Terser.minify(code).code) + "})();"
     const md = `
         # Copy Zendesk link bookmarklet
 
@@ -19,7 +19,7 @@ function main() {
     `
 
     fs.writeFileSync("index.md", stripIndent(md), "utf8");
-    fs.writeFileSync("copy-zendesk-link-markdown.bookmarklet", out , "utf8");
+    fs.writeFileSync("copy-zendesk-link-bookmarklet.bookmarklet", out , "utf8");
 }
 
 main()
