@@ -13,7 +13,7 @@ Copies a markdown link to the Zendesk ticket you're currently viewing in the for
 Requires Node.js to build the bookmarklet.
 
 1. Clone the repo and `cd` into the directory
-1. Make changes to `copy-zendesk-link-markdown.js`
+1. Make changes to `src/bookmarklet.js`
 1. Run `npm install && npm run compile`
 
 ## Development status

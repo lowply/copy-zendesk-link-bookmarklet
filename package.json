@@ -4,8 +4,7 @@
   "description": "Copy Zendesk link in a makrdown format",
   "main": "main.js",
   "dependencies": {
-    "strip-indent": "^3.0.0",
-    "encodeurl": "^1.0.2",
+    "ejs": "^2.7.1",
     "terser": "^4.3.1"
   },
   "scripts": {
