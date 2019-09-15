@@ -1,25 +1,19 @@
 'use strict';
 
 const fs = require('fs');
-const encodeUrl = require('encodeurl')
 const Terser = require("terser");
-const stripIndent = require('strip-indent');
+const ejs = require('ejs');
 
 function main() {
-    const code = fs.readFileSync("copy-zendesk-link-bookmarklet.js", {encoding: "utf-8"});
-    const out = "javascript:(function(){" + encodeUrl(Terser.minify(code).code) + "})();"
-    const md = `
-        # Copy Zendesk link bookmarklet
-
-        Drag this link to your bookmark bar to save the bookmarklet:
-
-        [Copy ZD link](${out})
-
-        See [github.com/lowply/copy-zendesk-link-bookmarklet](https://github.com/lowply/copy-zendesk-link-bookmarklet) for more information.
-    `
-
-    fs.writeFileSync("index.md", stripIndent(md), "utf8");
-    fs.writeFileSync("copy-zendesk-link-bookmarklet.bookmarklet", out , "utf8");
+    const code = fs.readFileSync("src/bookmarklet.js", {encoding: "utf-8"});
+    const minified = encodeURI(Terser.minify(code, {warnings: true}).code);
+    ejs.renderFile("src/index.ejs", {src: minified}, function(err, out){
+        if (err != null) {
+            console.log(err);
+            return false;
+        }
+        fs.writeFileSync("docs/index.md", out, "utf8");
+    })
 }
 
 main()
