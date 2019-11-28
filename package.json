@@ -7,9 +7,6 @@
     "ejs": "^2.7.1",
     "terser": "^4.3.1"
   },
-  "scripts": {
-    "compile": "node main.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lowply/copy-zendesk-link-bookmarklet.git"
