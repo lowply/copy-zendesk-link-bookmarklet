@@ -1,6 +1,6 @@
 {
   "name": "copy-zendesk-link-markdown",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Copy Zendesk link in a makrdown format",
   "main": "main.js",
   "dependencies": {
