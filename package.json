@@ -4,8 +4,11 @@
   "description": "Copy Zendesk link in a makrdown format",
   "main": "main.js",
   "dependencies": {
-    "ejs": "^2.7.1",
-    "terser": "^4.3.1"
+    "ejs": "^3.1.3",
+    "terser": "^4.8.0"
+  },
+  "scripts": {
+    "build": "node main.js"
   },
   "repository": {
     "type": "git",

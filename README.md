@@ -14,7 +14,7 @@ Requires Node.js to build the bookmarklet.
 
 1. Clone the repo and `cd` into the directory
 1. Make changes to `src/bookmarklet.js`
-1. Run `npm install && ./main.js`
+1. Run `npm install && npm run build`
 
 ## Development status
 
