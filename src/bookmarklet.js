@@ -17,8 +17,8 @@ javascript:(() => {
         return false;
     }
 
-    const title = selected.getAttribute("aria-label").replace(/^web /, "");
-    const tid = selected.getAttribute("data-entity-id");
+    const title = selected.querySelector("div[data-test-id=header-tab-title]").innerText;
+    const tid = selected.querySelector("div[data-test-id=header-tab-subtitle] span").innerText;
     
     if (title == null || tid == null){
         console.log("Can't find the title or ticket id of the selected tab.");
