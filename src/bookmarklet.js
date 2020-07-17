@@ -26,7 +26,7 @@ javascript:(() => {
     }
 
     let textArea = document.createElement("textarea");
-    textArea.value = "[ZD#" + tid.trim() + " - " + title.trim() + "](" + url + ")";
+    textArea.value = "[ZD" + tid.trim() + " - " + title.trim() + "](" + url + ")";
     document.body.appendChild(textArea);
     textArea.select();
     document.execCommand("copy");
